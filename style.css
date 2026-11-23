@@ -1,0 +1,245 @@
+/* style.css : 내 영화 보드 스타일 / 방준태 */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.top {
+    background: #111827;
+    border-bottom: 1px solid #1f2937;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-family: "Do Hyeon", "Noto Sans KR", sans-serif;
+    font-size: 1.6rem;
+}
+
+.header-container nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+}
+
+.header-container nav a {
+    color: #f8fafc;
+    text-decoration: none;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    padding: 36px 20px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+}
+
+.hero-content p {
+    margin: 0;
+    color: #cbd5e1;
+}
+
+main,
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+.toolbar input[type="search"],
+.toolbar select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.toolbar fieldset {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 6px 12px;
+    border: 1px solid #475569;
+    border-radius: 6px;
+}
+
+.toolbar p {
+    margin: 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    position: relative;
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.card .poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.card.no-poster .poster-fallback {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    color: #fbbf24;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.rank {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #475569;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.card.hot .badge,
+.badge.hot {
+    background: #dc2626;
+}
+
+.info h3 {
+    margin: 10px 0 4px;
+    font-size: 1.05rem;
+}
+
+.year {
+    margin: 0 0 8px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.like {
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    color: #bbb;
+    cursor: pointer;
+    padding: 0;
+}
+
+.like.liked {
+    color: crimson;
+}
+
+.state-empty {
+    display: none;
+    color: #fff;
+    padding: 24px 0;
+}
+
+.board.is-empty + .state-empty {
+    display: block;
+}
+
+dialog {
+    border: 1px solid #475569;
+    border-radius: 12px;
+    background: #1e293b;
+    color: #f8fafc;
+    max-width: 540px;
+    width: calc(100% - 32px);
+    padding: 20px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#detailBody img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+#closeDetail {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 32px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
